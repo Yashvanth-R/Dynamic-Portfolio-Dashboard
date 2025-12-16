@@ -41,7 +41,13 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   });
 });
 
-app.listen(PORT, () => {
-  console.log(` Backend server running on http://localhost:${PORT}`);
-  console.log(` API endpoints available at http://localhost:${PORT}/api`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(` Backend server running on http://localhost:${PORT}`);
+    console.log(` API endpoints available at http://localhost:${PORT}/api`);
+  });
+}
+
+// Export for Vercel
+export default app;
