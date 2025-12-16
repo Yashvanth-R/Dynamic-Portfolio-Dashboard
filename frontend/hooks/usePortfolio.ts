@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Stock, StockWithMarketData, SectorSummary, MarketData } from '@/types/stock';
 import portfolioData from '@/data/portfolio.json';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 const REFRESH_INTERVAL = 15000; // 15 seconds
 
 export function usePortfolio() {
